@@ -15,7 +15,7 @@ if ENV["WEBSOLR_URL"]
   @pending = true
   puts "Checking index availability..."
 
-  response = RestClient.post("http://#{ENV["WEBSOLR_CONFIG_HOST"]}/schema/#{api_key}.json", :client => "sunspot-1.0")
+  response = RestClient.post("http://#{ENV["WEBSOLR_CONFIG_HOST"]}/schema/#{api_key}.json", :client => "sunspot-1.1")
   json = JSON.parse(response.to_s)
   case json["status"]
   when "ok"
